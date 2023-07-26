@@ -1,7 +1,6 @@
 # restframework - django
 from rest_framework import viewsets, status
 from rest_framework.response import Response
-from django.views.decorators.csrf import csrf_exempt
 
 # App
 from apps.event.models import Event, EventStatus, EventType
@@ -12,7 +11,7 @@ class EventViewSet(viewsets.ModelViewSet):
     queryset = Event.objects.all()
     serializer_class = EventSerializer
     
-    @csrf_exempt
+"""
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
@@ -30,4 +29,4 @@ class EventViewSet(viewsets.ModelViewSet):
 
         serializer = self.get_serializer(instance=event)
         response = Response(serializer.data, status=status.HTTP_201_CREATED)
-        return response
+        return response """

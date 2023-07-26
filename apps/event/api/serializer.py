@@ -1,10 +1,10 @@
 from rest_framework import serializers
-from apps.event.models import Event
+from apps.event.models import Event, EventType, EventStatus
 
 class EventSerializer(serializers.ModelSerializer):
-    date = serializers.DateField(format="%Y-%m-%d", required=False)
-    status = serializers.CharField(source='status.name', required=False)
-    
+    type = serializers.PrimaryKeyRelatedField(queryset=EventType.objects.all())
+    status = serializers.PrimaryKeyRelatedField(queryset=EventStatus.objects.all())
+
     class Meta:
         model = Event
-        fields = ('id', 'description', 'date', 'management', 'type', 'status',)
+        fields = ['id', 'description', 'date', 'management', 'type', 'status']
