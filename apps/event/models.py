@@ -30,7 +30,7 @@ class Event(models.Model):
     description = models.CharField(max_length=255)
     date = models.DateField()
     management = models.BooleanField()
-    isdelete = models.BooleanField(default=False)
+    isdeleted = models.BooleanField(default=False)
     type = models.ForeignKey(EventType, on_delete=models.DO_NOTHING)
     status = models.ForeignKey(EventStatus, on_delete=models.DO_NOTHING)
 
