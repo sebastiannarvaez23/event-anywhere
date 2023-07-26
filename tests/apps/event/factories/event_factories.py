@@ -21,18 +21,18 @@ class EventFactory:
         event_type = self.create_event_type()
         event_status = self.create_event_status()
         return {
-            'description': faker.description(),
-            'date': faker.date_this_decade()
+            'description': faker.text(),
+            'date': faker.date(),
             'management': faker.random_element(elements=(True, False)),
             'type': event_type,
             'status': event_status
         }
 
-    def create_event_type():
+    def create_event_type(self):
         return EventType.objects.create(**self.build_event_type_JSON())
 
-    def create_event_status():
+    def create_event_status(self):
         return EventStatus.objects.create(**self.build_event_status_JSON())
 
-    def create_event():
+    def create_event(self):
         return Event.objects.create(**self.build_event_JSON())
