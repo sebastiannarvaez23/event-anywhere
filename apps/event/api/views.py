@@ -30,6 +30,17 @@ class EventViewSet(viewsets.ModelViewSet):
         serializer = self.get_serializer(instance=event)
         response = Response(serializer.data, status=status.HTTP_201_CREATED)
         return response
+    
+    def update(self, request, *args, **kwargs):
+        instance = self.get_object()
+        serializer = self.get_serializer(instance, data=request.data, partial=False)
+        serializer.is_valid(raise_exception=True)
+
+        if 'is_deleted' in request.data:
+            raise serializers.ValidationError("El campo 'is_deleted' no se puede modificar.")
+
+        self.perform_update(serializer)
+        return Response(serializer.data)
 
     def partial_update(self, request, *args, **kwargs):
         instance = self.get_object()
@@ -38,6 +49,9 @@ class EventViewSet(viewsets.ModelViewSet):
 
         serializer.validated_data['type'] = EventType.objects.get(id=request.data['type'])
         serializer.validated_data['status'] = EventStatus.objects.get(id=request.data['status'])
+
+        if 'is_deleted' in request.data:
+            raise serializers.ValidationError("El campo 'is_deleted' no se puede modificar.")
 
         if instance.type.id == 2 and request.data['type'] != 2:
             serializer.validated_data['requires_management'] = None
