@@ -8,7 +8,7 @@ from apps.event.api.serializer import EventSerializer
 
 class EventViewSet(viewsets.ModelViewSet):
     """Event view set."""
-    queryset = Event.objects.filter(isdeleted=False)
+    queryset = Event.objects.filter(is_deleted=False)
     serializer_class = EventSerializer
 
     def destroy(self, request, *args, **kwargs):

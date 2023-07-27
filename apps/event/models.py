@@ -29,8 +29,8 @@ class Event(models.Model):
     id = models.AutoField(primary_key=True)
     description = models.CharField(max_length=255)
     date = models.DateField()
-    management = models.BooleanField()
-    isdeleted = models.BooleanField(default=False)
+    requires_management = models.BooleanField(blank=True, null=True, default=None)
+    is_deleted = models.BooleanField(default=False)
     type = models.ForeignKey(EventType, on_delete=models.DO_NOTHING)
     status = models.ForeignKey(EventStatus, on_delete=models.DO_NOTHING)
 
