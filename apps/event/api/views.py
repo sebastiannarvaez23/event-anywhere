@@ -14,7 +14,7 @@ class EventViewSet(viewsets.ModelViewSet):
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-        
+
         event_status = EventStatus.objects.get(id=request.data['status'])
         event_type = EventType.objects.get(id=request.data['type'])
         
@@ -33,6 +33,9 @@ class EventViewSet(viewsets.ModelViewSet):
         instance = self.get_object()
         serializer = self.get_serializer(instance, data=request.data, partial=True)
         serializer.is_valid(raise_exception=True)
+
+        serializer.validated_data['type'] = EventType.objects.get(id=request.data['type'])
+        serializer.validated_data['status'] = EventStatus.objects.get(id=request.data['status'])
 
         if instance.type.id == 2 and request.data['type'] != 2:
             serializer.validated_data['requires_management'] = None
@@ -53,6 +56,6 @@ class EventViewSet(viewsets.ModelViewSet):
 
     def destroy(self, request, *args, **kwargs):
         instance = self.get_object()
-        instance.isdeleted = True
+        instance.is_deleted = True
         instance.save()
         return Response(status=204)
