@@ -7,5 +7,11 @@ from apps.status.models import EventStatus
 
 class EventStatusViewSet(viewsets.ModelViewSet):
     """EventStatus view set."""
-    queryset = EventStatus.objects.all()
+    queryset = EventStatus.objects.filter(is_deleted=False)
     serializer_class = EventStatusSerializer
+
+    def destroy(self, request, *args, **kwargs):
+        instance = self.get_object()
+        instance.is_deleted = True
+        instance.save()
+        return Response(status=204)

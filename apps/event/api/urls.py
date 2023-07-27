@@ -7,14 +7,6 @@ from apps.type.api.views import EventTypeViewSet
 routerEvent = DefaultRouter()
 routerEvent.register(r'', EventViewSet, basename='event')
 
-routerType = DefaultRouter()
-routerType.register(r'', EventTypeViewSet, basename='type')
-
-routerStatus = DefaultRouter()
-routerStatus.register(r'', EventStatusViewSet, basename='status')
-
 urlpatterns = [
     path('', include(routerEvent.urls)),
-    path('type/', include(routerType.urls)),
-    path('status/', include(routerStatus.urls)),
 ]

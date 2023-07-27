@@ -4,6 +4,7 @@ from django.db import models
 class EventStatus(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=200, verbose_name="Nombre")
+    is_deleted = models.BooleanField(default=False, verbose_name="Eliminado")
 
     class Meta:
         verbose_name = "Estado del Evento"
