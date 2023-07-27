@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from apps.event.models import Event, EventType, EventStatus
+from apps.event.models import Event
 
 class EventSerializer(serializers.ModelSerializer):
     type = serializers.StringRelatedField()

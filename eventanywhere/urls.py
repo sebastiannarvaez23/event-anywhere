@@ -30,4 +30,6 @@ urlpatterns = [
     # Paths app
     path('admin/', admin.site.urls),
     path(f'{apiversion}event/', include('apps.event.api.urls')),
+    path(f'{apiversion}event/status/', include('apps.status.api.urls')),
+    path(f'{apiversion}event/type/', include('apps.type.api.urls')),
 ]

@@ -1,30 +1,8 @@
 from django.db import models
+from apps.status.models import EventStatus
+from apps.type.models import EventType
 
 # Create your models here.
-class EventType(models.Model):
-    id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=200, verbose_name="Nombre")
-
-    class Meta:
-        verbose_name = "Tipo de Evento"
-        verbose_name_plural = "Tipos de Eventos"
-        ordering = ['-id']
-
-    def __str__(self):
-        return self.name
-
-class EventStatus(models.Model):
-    id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=200, verbose_name="Nombre")
-
-    class Meta:
-        verbose_name = "Estado del Evento"
-        verbose_name_plural = "Estados de los eventos"
-        ordering = ['-id']
-
-    def __str__(self):
-        return self.name
-
 class Event(models.Model):
     id = models.AutoField(primary_key=True)
     description = models.CharField(max_length=255, verbose_name="Descripción")

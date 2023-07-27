@@ -5,6 +5,8 @@ from rest_framework.response import Response
 # App
 from apps.event.models import Event, EventStatus, EventType
 from apps.event.api.serializer import EventSerializer
+from apps.status.api.serializer import EventStatusSerializer
+from apps.type.api.serializer import EventTypeSerializer
 
 class EventViewSet(viewsets.ModelViewSet):
     """Event view set."""

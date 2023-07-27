@@ -28,6 +28,8 @@ INSTALLED_APPS = [
     'drf_yasg',
     'rest_framework',
     'apps.event',
+    'apps.type',
+    'apps.status'
 ]
 
 # DRF CONF
