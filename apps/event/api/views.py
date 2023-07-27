@@ -10,6 +10,12 @@ class EventViewSet(viewsets.ModelViewSet):
     """Event view set."""
     queryset = Event.objects.filter(isdeleted=False)
     serializer_class = EventSerializer
+
+    def destroy(self, request, *args, **kwargs):
+        instance = self.get_object()
+        instance.isdeleted = True
+        instance.save()
+        return Response(status=204)
     
 """
     def create(self, request, *args, **kwargs):
