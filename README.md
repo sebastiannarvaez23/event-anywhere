@@ -20,7 +20,7 @@ De esta forma tendras las dependencias correctamente instaladas en el entorno qu
 
 ## Uso
 #### Tipo de aplicación
-Esta aplicación fue construida con el framework django, utilizando la extensión de Django Rest Framework. Es una aplicación netamente de backend la cual te permitira interactuar con varios entornos. La aplicación tiene integrada una utilidad llamada Swagger, la cual te permitirá realizar peticiones sin la necesidad de utilizar Postman, si es tu caso y quieres utilizar Postman, te dejaré un comprimido en el correo electronico que podras importar en Postman con las peticiones ya configuradas y listas para ejecutar.
+Esta aplicación fue construida con el framework django, utilizando la extensión de Django Rest Framework. Es una aplicación netamente de backend la cual te permitira interactuar con varios entornos. La aplicación tiene integrada una utilidad llamada Swagger, la cual te permitirá realizar peticiones sin la necesidad de utilizar Postman.
 
 #### Herramientas de contrucción
 <p align="left">
