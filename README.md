@@ -31,5 +31,11 @@ Esta aplicación fue construida con el framework django, utilizando la extensió
 <img src="https://user-images.githubusercontent.com/88569352/229976087-c6d3eba8-ef91-4ff4-8260-a8f38a88093e.png" width="auto" height="80">
 </p>
 
-## Pantalla de Swagger
+## Swagger
+#### Rutas para la documentación
+Luego de levantar el servidor del proyecto puedes visitar:
+La [Documentación de Swagger con un entorno de consumo](http://localhost:8000/redoc/) o también la 
+[Documentación autogenerada de la configuración de cada servicio](http://localhost:8000/docs/).
+
+#### Pantalla del modelo principal
 <img src="https://github.com/sebastiannarvaez23/event-anywhere/assets/88569352/1bbfde6d-1a94-44ab-b009-b04a85b025fa" width="500" />
