@@ -27,9 +27,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'drf_yasg',
     'rest_framework',
-    'apps.event',
+    'apps.event.apps.EventConfig',
+    'apps.status',
     'apps.type',
-    'apps.status'
 ]
 
 # DRF CONF
