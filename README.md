@@ -27,6 +27,7 @@ Esta aplicación fue construida con el framework django, utilizando la extensió
 <img src="https://github.com/sebastiannarvaez23/event-anywhere/assets/88569352/d96abd89-7804-4fa5-816c-5ea41e8100ab" width="100" />
 <img src="https://static-00.iconduck.com/assets.00/git-icon-1024x1024-pqp7u4hl.png" width="auto" height="90">
 <img src="https://user-images.githubusercontent.com/88569352/218375255-d9a28190-10e2-44ad-b13d-721292e46815.png" width="90">
+  <img src="https://github.com/sebastiannarvaez23/warehouse-anywhere-bk/assets/88569352/d7ab32ec-c4bc-4eb7-8e08-6ad6dfa3a3a2" width="auto" height="90">
 <img src="https://www.django-rest-framework.org/img/logo.png" width="180">
 <img src="https://user-images.githubusercontent.com/88569352/229976087-c6d3eba8-ef91-4ff4-8260-a8f38a88093e.png" width="auto" height="80">
 </p>
